@@ -10,13 +10,14 @@ import org.springframework.web.client.RestTemplate;
 
 public class BiocData {
     @GetMapping("/bioc")
+    //String test = "BIOC";
     public Object bioceptStockData(RestTemplate restTemplate) {
         Object requestData = restTemplate.getForObject("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BIOC&interval=5min&apikey=WTOFGMVB6POLYQXC", Object.class);
         return requestData;
     }
 
 
-    public class BiocData {
+    public class BiocOverView {
         @GetMapping("/biocoverview")
         public Object overView(RestTemplate restTemplateA) {
             Object requestOverviewData = restTemplateA.getForObject("https://www.alphavantage.co/query?function=OVERVIEW&symbol=bioc&apikey=WTOFGMVB6POLYQXC", Object.class);
