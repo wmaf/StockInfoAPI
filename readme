@@ -1,0 +1,51 @@
+MVP
+
+Create a SpringBoot API that can receive requests and respond to information about publicly traded companies
+
+Alpha Vantage API Documentation
+
+
+ Alpha Vantage Get Your API Key
+
+TestRequest / Example Data
+
+
+You should be able to request a company's info by sending your API a company's stock ticker, and it will return for you an overview of their information.
+
+
+
+
+STEPS:
+
+Use the start.spring.io initializer to create a new project with the name “StockInfoAPI”
+You should use maven
+choose the default spring version
+add the spring web dependency
+
+Open the template project in IntelliJ and upload the starter code to GitHub
+Use the VCS tab to “Share Project On GitHub”
+Update application.properties
+Add server.port with proper port number (ex. 4500)
+
+Create a controllers package
+
+Create a StockController class within the ‘controllers’ package
+
+Implement the standard code needed for a RestController.
+Add RestController annotation
+Add RequestMapping annotation with “/api/stocks” as the parameter
+
+Create a route that allows a stock ticker to be received as a RequestParam
+use GetMapping to create route handler
+use RequestParam annotation to store a String as ‘symbol’
+the path should be “/overview”
+a final example url ( http://localhost:4500/api/stocks/overview?symbol=APPL )
+
+Use the received RequestParam to request a Stocks overview data from the requested company.
+Use RestTemplate to make external HTTP requests to Alphavantage api
+Hide API key in environment variable, store in application.properties
+
+Helpful resources:
+
+https://stackoverflow.com/questions/28735463/change-property-names-while-deserialzing-class-to-json-in-spring-mvc
+
